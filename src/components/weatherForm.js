@@ -11,7 +11,7 @@ export default function WeatherForm({onChangeCity}){
         const value = e.target.value;
 
         // validar texto vacio
-        if(value!== ''){
+        if(value !== ''){
             setCity(value);
         }
     }
