@@ -1,5 +1,6 @@
 import { useState , useEffect} from "react";
 import WeatherForm from "./weatherForm";
+import WeatherMainInfo from "./weatherMainInfo";
 
 //variables
 const REACT_APP_URL="http://api.weatherapi.com/v1/current.json?aqi=no"
@@ -38,7 +39,7 @@ export default function WeatherApp() {
       const json = await request.json();
       // enviar al estado
       setWeather(json);
-      //console.log(json);
+     console.log(json);
 
     } catch (e) {
       console.error(e);
@@ -53,7 +54,7 @@ export default function WeatherApp() {
   return (
     <div>
        <WeatherForm onChangeCity={handleOnChangeCity}/>
-        <div>{weather?.current.temp_c}</div>
+       <WeatherMainInfo weather={weather}/>
     </div>
   );
 }
