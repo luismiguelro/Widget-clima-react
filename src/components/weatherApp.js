@@ -1,10 +1,13 @@
 import { useState , useEffect} from "react";
 import WeatherForm from "./weatherForm";
 import WeatherMainInfo from "./weatherMainInfo";
+import styles from "./weatherApp.module.css";
+import Loading from "./loading"
 
 //variables
 const REACT_APP_URL="http://api.weatherapi.com/v1/current.json?aqi=no"
 const REACT_APP_KEY="b691aa0958ea408c95f172101232203" 
+
 
 export default function WeatherApp() {
    // solicitud http: weather: objeto respuesta
@@ -37,6 +40,10 @@ export default function WeatherApp() {
         `${REACT_APP_URL}&key=${REACT_APP_KEY}&q=${city}`
       );
       const json = await request.json();
+
+      setTimeout(()=>{
+
+      },2000);
       // enviar al estado
       setWeather(json);
      console.log(json);
@@ -52,9 +59,10 @@ export default function WeatherApp() {
   }
 
   return (
-    <div>
+    <div className={styles.weatherContainer}>
        <WeatherForm onChangeCity={handleOnChangeCity}/>
-       <WeatherMainInfo weather={weather}/>
+       {weather? <WeatherMainInfo weather={weather}/>:<Loading/>}
+      
     </div>
   );
 }

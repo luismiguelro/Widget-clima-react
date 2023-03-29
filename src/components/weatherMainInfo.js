@@ -1,19 +1,21 @@
+import styles from "./weatherMainInfo.module.css";
+
 export default function WeatherMainInfo({weather}){
     return(
-        <div>
-            <div>{weather?.location.name}</div>
-            <div>{weather?.location.country}</div>
+        <div className={styles.mainInfo}>
+            <div className={styles.city}>{weather?.location.name}</div>
+            <div className={styles.country} >{weather?.location.country}</div>
 
-            <div>
+            <div className={styles.row}>
                 <div>
                     <img src={`http:${weather?.current.condition.icon}`} 
                     width="128px" 
                     alt={weather?.current.condition.text}
                     />
                 </div>
-                <div>
-                   <div>{weather?.current.condition.text}</div> 
-                   <div>{weather?.current.temp_c}°C / {weather?.current.temp_f}°F</div> 
+                <div className={styles.weatherConditions}>
+                   <div className={styles.condition}>{weather?.current.condition.text}</div> 
+                   <div className={styles.current}>{weather?.current.temp_c}°C / {weather?.current.temp_f}°F</div> 
                 </div>
             </div>
             <iframe 
