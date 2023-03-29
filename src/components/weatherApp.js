@@ -13,6 +13,7 @@ export default function WeatherApp() {
    // solicitud http: weather: objeto respuesta
   const [weather, setWeather] = useState(null);
 
+
   // cargar opcion por defecto: usando useEffect(efectos laterales): 
   //ejecutar codigo al cargar app, render,destruccion componente
 
@@ -52,17 +53,14 @@ export default function WeatherApp() {
       console.error(e);
     }
   }
-
   function handleOnChangeCity(city) {
     setWeather(null);
     loadInfo(city);
   }
-
   return (
     <div className={styles.weatherContainer}>
        <WeatherForm onChangeCity={handleOnChangeCity}/>
        {weather? <WeatherMainInfo weather={weather}/>:<Loading/>}
-      
     </div>
   );
 }
