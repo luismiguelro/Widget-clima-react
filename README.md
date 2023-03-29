@@ -2,7 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Captura de pantalla 2023-03-29 123602](https://user-images.githubusercontent.com/101124184/228622054-a5ba4249-1bcd-421b-9e78-9e65769c63b2.jpg)
+<a href="https://jocular-croquembouche-43fad1.netlify.app/"><img src="https://user-images.githubusercontent.com/101124184/228625299-c1aa3ade-b35e-44ef-8033-dedbc9f9de15.gif"></a>
+
+
 
 
 ## Available Scripts
